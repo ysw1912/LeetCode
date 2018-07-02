@@ -12,7 +12,7 @@
 
 &emsp;&emsp;尝试二分。从 left = 0 到 right = x，取 mid = (left + right) / 2，然后判断 mid * mid 与 x 的大小。结果错误，发现 x 较大时，mid * mid 的值会溢出，溢出后也可正可负，无法判断。
 
-#### 正解一  
+#### 正解一 ：二分法
 
 &emsp;&emsp;首先解决整数溢出的问题，主要有两点：
 
@@ -20,7 +20,7 @@
 
 - 使用`mid <= x / mid`代替`mid * mid <= x`
 
-&emsp;&emsp;然后发现 right 可以从 x / 2 开始，因为当 x ≥ 2 时，sqrt(x) ≤ x / 2；而 x == 1 or 0 则可以直接返回自身。然后这里又有一坑，当 2 ≤ x ≤ 3 时，x / 2 == 1，此时得出 mid = 0，x / mid 会出现除以 0 的错误。于是最终把右边界 right 设为`x / 2 + 1`。
+&emsp;&emsp;然后发现似乎可设`right = x / 2`，因为当 x ≥ 2 时，有 sqrt(x) ≤ x / 2；而 x ∈ {0, 1} 时，可直接返回自身。这里又有一坑！当 2 ≤ x ≤ 3 时，right = x / 2 = 1，第一次循环 mid = 0，之后的 x / mid 会出现除以 0 的错误。因此初始时设右边界`right = x / 2 + 1`或左边界`left = 1`均可解决。
 
 &emsp;&emsp;最终程序如下
 
@@ -29,7 +29,7 @@ int mySqrt(int x)
 {
     if (x == 0 || x == 1)
         return x;
-    int left = 0, right = x / 2 + 1, res = 0;
+    int left = 1, right = x / 2, res = 0;
     while (left <= right) {
         int mid = left + (right - left) / 2;     
         if (mid <= x / mid) {
@@ -40,6 +40,19 @@ int mySqrt(int x)
             right = mid - 1;
         }
     }
+    return res;
+}
+```
+
+#### 正解二 ：牛顿迭代法
+
+&emsp;&emsp;将$r = \sqrt{x}$转化为 求$f(r) = r^{2} - x = 0$的根。
+
+```cpp
+int mySqrt(int x) {
+    long res = x;
+    while (res * res > x)
+        res = (res + x / res) / 2;
     return res;
 }
 ```
