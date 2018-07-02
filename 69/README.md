@@ -46,6 +46,10 @@ int mySqrt(int x)
 
 #### 正解二 ：牛顿迭代法
 
+
+r = \sqrt{x}
+
+
 &emsp;&emsp;将$$r = \sqrt{x}$$转化为 求$$f(r) = r^{2} - x = 0$$的根。
 
 ```cpp
