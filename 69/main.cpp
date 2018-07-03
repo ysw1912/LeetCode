@@ -18,7 +18,7 @@ int main()
     cout << mySqrt(x) << endl;
     return 0;
 }
-
+/*
 int mySqrt(int x)
 {
     if (x == 0 || x == 1)
@@ -35,4 +35,19 @@ int mySqrt(int x)
         }
     }
     return res;
+}
+*/
+int mySqrt(int x)
+{
+    float xfloat = float(x);
+    float xhalf = 0.5f * xfloat;
+    int i = *(int*)&xfloat;     // get bits for floating VALUE 
+    i = 0x5f375a86 - (i >> 1);  // gives initial guess y0
+    xfloat = *(float*)&i;            // convert bits BACK to float
+    // Newton step, repeating increases accuracy
+    xfloat = xfloat * (1.5f - xhalf * xfloat * xfloat);
+    xfloat = xfloat * (1.5f - xhalf * xfloat * xfloat);
+    //xfloat = xfloat * (1.5f - xhalf * xfloat * xfloat);
+    int ret = 1 / xfloat;
+    return ret * ret > x ? ret - 1 : ret;
 }
