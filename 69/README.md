@@ -53,7 +53,7 @@ int mySqrt(int x)
 
 &emsp;&emsp; <img src="https://latex.codecogs.com/svg.latex?y-f(r_{0})=f'(r_{0})(r-r_{0})" title="y-f(r_{0})=f'(r_{0})(r-r_{0})" />
 
-令 y = 0，得该切线与 r 轴交于
+&emsp;&emsp;令 y = 0，得该切线与 r 轴交于
 
 &emsp;&emsp; <img src="https://latex.codecogs.com/svg.latex?r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}&plus;\tfrac{x}{r_{0}})/2" title="r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}+\tfrac{x}{r_{0}})/2" />
 
