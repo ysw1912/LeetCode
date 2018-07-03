@@ -46,9 +46,17 @@ int mySqrt(int x)
 
 #### 正解二 ：牛顿迭代法
 
-&emsp;&emsp;将 <img src="https://latex.codecogs.com/svg.latex?r=\sqrt{x}" title="r=\sqrt{x}" /> 转化为求 <img src="https://latex.codecogs.com/svg.latex?f(r)=r^2-x=0" title="f(r)=r^2-x=0" /> 的根。  
-在曲线 <img src="https://latex.codecogs.com/svg.latex?y=f(r)" title="y=f(r)" /> 上任取一点 <img src="https://latex.codecogs.com/svg.latex?(r_{0},f(r_{0}))(r_{0}\neq0)" title="(r_{0},f(r_{0}))(r_{0}\neq0)" />，则曲线上该点的切线方程为 <img src="https://latex.codecogs.com/svg.latex?y-f(r_{0})=f'(r_{0})(r-r_{0})" title="y-f(r_{0})=f'(r_{0})(r-r_{0})" />。  
-令 <img src="https://latex.codecogs.com/svg.latex?y-f(r_{0})=f'(r_{0})(r-r_{0})" title="y-f(r_{0})=f'(r_{0})(r-r_{0})" />，得该切线与 r 轴交于 <img src="https://latex.codecogs.com/svg.latex?r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}&plus;\tfrac{x}{r_{0}})/2" title="r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}+\tfrac{x}{r_{0}})/2" />。  
+&emsp;&emsp;主要思路：将 <img src="https://latex.codecogs.com/svg.latex?r=\sqrt{x}" title="r=\sqrt{x}" /> 转化为求 <img src="https://latex.codecogs.com/svg.latex?f(r)=r^2-x=0" title="f(r)=r^2-x=0" /> 的根。
+
+
+&emsp;&emsp;在曲线 <img src="https://latex.codecogs.com/svg.latex?y=f(r)" title="y=f(r)" /> 上任取一点 <img src="https://latex.codecogs.com/svg.latex?(r_{0},f(r_{0}))(r_{0}\neq0)" title="(r_{0},f(r_{0}))(r_{0}\neq0)" />，则曲线上该点的切线方程为
+
+<center><img src="https://latex.codecogs.com/svg.latex?y-f(r_{0})=f'(r_{0})(r-r_{0})" title="y-f(r_{0})=f'(r_{0})(r-r_{0})" /></center>
+
+令 y = 0，得该切线与 r 轴交于
+
+<center><img src="https://latex.codecogs.com/svg.latex?r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}&plus;\tfrac{x}{r_{0}})/2" title="r_{1}=r_{0}-\tfrac{f(r_{0})}{f'(r_{0})}=r_{0}-\tfrac{r_{0}^{2}-x}{2r_{0}}=(r_{0}+\tfrac{x}{r_{0}})/2" /></center>
+
 这个得到的交点 r1 是最终要求的 <img src="https://latex.codecogs.com/svg.latex?f(r)=r^2-x=0" title="f(r)=r^2-x=0" /> 的根的一次逼近，之后再以 r1 为基准继续逼近，只需迭代几步就能得到最终的结果。
 
 &emsp;&emsp;可取初始点 r0 = x。而由正解一可知，也可从 r0 = x / 2 + 1 开始迭代。
@@ -64,7 +72,7 @@ int mySqrt(int x) {
 
 #### 正解三：0x5f375a86
 
-&emsp;&emsp;基于牛顿迭代法的超(无解神奇算法)[http://www.cnblogs.com/pkuoliver/archive/2010/10/06/1844725.html]
+&emsp;&emsp;基于牛顿迭代法的[超无解神奇算法](http://www.cnblogs.com/pkuoliver/archive/2010/10/06/1844725.html)
 
 ```cpp
 int mySqrt(int x)
