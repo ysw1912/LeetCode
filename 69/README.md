@@ -49,7 +49,7 @@ int mySqrt(int x)
 &emsp;&emsp;主要思路：将 <img src="https://latex.codecogs.com/svg.latex?r=\sqrt{x}" title="r=\sqrt{x}" /> 转化为求 <img src="https://latex.codecogs.com/svg.latex?f(r)=r^2-x=0" title="f(r)=r^2-x=0" /> 的根。
 
 
-&emsp;&emsp;在曲线 <img src="https://latex.codecogs.com/svg.latex?y=f(r)" title="y=f(r)" /> 上任取一点 <img src="https://latex.codecogs.com/svg.latex?(r_{0},f(r_{0}))(r_{0}\neq0)" title="(r_{0},f(r_{0}))(r_{0}\neq0)" />，则曲线上该点的切线方程为
+在曲线 <img src="https://latex.codecogs.com/svg.latex?y=f(r)" title="y=f(r)" /> 上任取一点 <img src="https://latex.codecogs.com/svg.latex?(r_{0},f(r_{0}))(r_{0}\neq0)" title="(r_{0},f(r_{0}))(r_{0}\neq0)" />，则曲线上该点的切线方程为
 
 <center><img src="https://latex.codecogs.com/svg.latex?y-f(r_{0})=f'(r_{0})(r-r_{0})" title="y-f(r_{0})=f'(r_{0})(r-r_{0})" /></center>
 
@@ -59,7 +59,7 @@ int mySqrt(int x)
 
 这个得到的交点 r1 是最终要求的 <img src="https://latex.codecogs.com/svg.latex?f(r)=r^2-x=0" title="f(r)=r^2-x=0" /> 的根的一次逼近，之后再以 r1 为基准继续逼近，只需迭代几步就能得到最终的结果。
 
-&emsp;&emsp;可取初始点 r0 = x。而由正解一可知，也可从 r0 = x / 2 + 1 开始迭代。
+可取初始点 r0 = x。而由正解一可知，也可从 r0 = x / 2 + 1 开始迭代。
 
 ```cpp
 int mySqrt(int x) {
