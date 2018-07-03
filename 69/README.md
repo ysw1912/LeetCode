@@ -1,8 +1,12 @@
 ### 69. Sqrt(x)
 
+-----
+
 &emsp;&emsp;Implement `int sqrt(int x)`.
 
 &emsp;&emsp;确保 x 是非负整数。返回值是 int 型，直接舍去小数部分。
+
+-----
 
 #### 错解一
 
@@ -11,6 +15,8 @@
 #### 错解二
 
 &emsp;&emsp;尝试二分。从 left = 0 到 right = x，取 mid = (left + right) / 2，然后判断 mid * mid 与 x 的大小。结果错误，发现 x 较大时，mid * mid 的值会溢出，溢出后也可正可负，无法判断。
+
+-----
 
 #### 正解一 ：二分法
 
