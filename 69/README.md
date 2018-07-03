@@ -46,7 +46,7 @@ int mySqrt(int x)
 
 #### 正解二 ：牛顿迭代法
 
-&emsp;&emsp;将 r = sqrt(x) 转化为求 f(r) = r^2 - x = 0 的根。
+&emsp;&emsp;将<img src="https://latex.codecogs.com/svg.latex?r=\sqrt{x}" title="r=\sqrt{x}" />转化为求 f(r) = r^2 - x = 0 的根。
 
 ```cpp
 int mySqrt(int x) {
