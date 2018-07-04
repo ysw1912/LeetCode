@@ -2,7 +2,7 @@
 
 -----
 
-&emsp;&emsp;Implement `int sqrt(int x)`.
+&emsp;&emsp;实现`int sqrt(int x)`.
 
 &emsp;&emsp;确保 x 是非负整数。返回值是 int 型，直接舍去小数部分。
 
