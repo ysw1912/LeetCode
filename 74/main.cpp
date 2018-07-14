@@ -10,7 +10,7 @@
 
 using namespace std;
 
-bool find(int** matrix, int row, int col, int target);
+bool searchMatrix(int** matrix, int row, int col, int target);
 
 int** CreateMatrix(int row, int col, ...)
 {
@@ -46,12 +46,14 @@ int main()
                                           10, 11, 16, 20,
                                           23, 30, 34, 50);
     PrintMatrix(matrix, row, col);
-    cout << find(matrix, row, col, 17) << endl;
+    cout << searchMatrix(matrix, row, col, 23) << endl;
     return 0;
 }
-
-bool find(int** matrix, int row, int col, int target)
+/*
+bool searchMatrix(int** matrix, int row, int col, int target)
 {
+    if (row == 0 && col == 0)
+        return false;
     if (target < matrix[0][0] || target > matrix[row - 1][col - 1])
         return false;
     int left = 0, right = row, mid = left + (right - left) / 2;
@@ -77,5 +79,22 @@ bool find(int** matrix, int row, int col, int target)
     }
     return false;
 }
-
-
+*/
+bool searchMatrix(int** matrix, int row, int col, int target)
+{
+    if (row == 0 && col == 0)
+        return false;
+    if (target < matrix[0][0] || target > matrix[row - 1][col - 1])
+        return false;
+    int left = 0, right = row * col - 1;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (target == matrix[mid / col][mid % col])
+            return true;
+        else if (target < matrix[mid / col][mid % col])
+            right = mid - 1;
+        else 
+            left = mid + 1;
+    }
+    return matrix[left / col][left % col] == target;
+}
