@@ -15,4 +15,24 @@
 
 #### 正解一
 
-&emsp;&emsp;
+&emsp;&emsp;由于只有 3 个数，只要把最小的数 0 一直放到数组前端，最大的 2 一直放在数组尾端，即可完成排序。用 left 指向数组头，right 指向数组尾，p 从头开始遍历到 right。如果 p 所指是 0，则与 left 交换，left 右移一位；如果 p 所指是 2，则与 right 交换，right 左移一位；如果该轮无需交换，则 p 前进一位。
+
+```cpp
+void sortColors(vector<int>& nums)
+{
+    int left = 0, right = nums.size() - 1;
+    int p = left;
+    while (p <= right) {
+        if (nums[p] == 0 && p != left) {
+            swap(nums[left], nums[p]);
+            ++left;
+        }
+        else if (nums[p] == 2 && p != right) {
+            swap(nums[right], nums[p]);
+            --right;
+        }
+        else 
+            ++p;
+    }
+}
+```
