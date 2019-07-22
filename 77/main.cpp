@@ -16,9 +16,9 @@ int main()
 {
     int n = 4, k = 2;
     vector<vector<int>> vec = combine(n, k);
-    for (int i = 0; i < (int)vec.size(); ++i) {
+    for (auto & i : vec) {
         for (int j = 0; j < k; ++j)
-            cout << vec[i][j] << ' ';
+            cout << i[j] << ' ';
         cout << endl;
     }
     return 0;

@@ -16,8 +16,8 @@ int main()
 {
     vector<int> vec{2, 0, 2, 1, 1, 0};
     sortColors(vec);
-    for (size_t i = 0; i < vec.size(); ++i)
-        cout << vec[i] << ' ';
+    for (int i : vec)
+        cout << i << ' ';
     cout << endl;
     return 0;
 }
