@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 
+#include "utils.h"
+
 using namespace std;
 
 void sortColors(vector<int>& nums);
@@ -16,9 +18,7 @@ int main()
 {
     vector<int> vec{2, 0, 2, 1, 1, 0};
     sortColors(vec);
-    for (int i : vec)
-        cout << i << ' ';
-    cout << endl;
+    PrintVector(vec, vec.size());
     return 0;
 }
 
