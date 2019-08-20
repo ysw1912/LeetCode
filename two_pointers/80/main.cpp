@@ -1,14 +1,6 @@
-/*************************************************************************
-    > File Name: main.cpp
-    > Author: Shiwei
-    > E-mail: 793377164@qq.com
-    > Created Time: 2019-07-23
-*************************************************************************/
-
-#include <iostream>
-#include <vector>
-
 #include "utils.h"
+
+#include <vector>
 
 using namespace std;
 
