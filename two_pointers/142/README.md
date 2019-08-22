@@ -10,7 +10,7 @@
 
 &emsp;&emsp;双指针 p 一次 1 step，q 一次 2 step，如果链表有环则 p、q 会在环中汇合，这里设汇合点为 meet。
 
-![判断有环]()
+![判断有环](https://github.com/ysw1912/LeetCode/blob/master/two_pointers/142/1.png)
 
 &emsp;&emsp;接下来要找到环的入口：
 
@@ -20,7 +20,7 @@
    
 2. 最好的方法需要用到一些数学推导。如图，假设 head 到环的入口的步长为 m，入口到 meet 的步长为 k，环的一圈步长为 r。
 
-   ![寻找入口]()
+   ![寻找入口](https://github.com/ysw1912/LeetCode/blob/master/two_pointers/142/2.png)
    
    则 p 走过了 m + k + P * r 步，q 走过了 m + k + Q * r 步，其中 P、Q 均为自然数。
    
