@@ -3,26 +3,33 @@
 
 #include "data_structure.h"
 
-bool hasCycle(ListNode *head);
+ListNode *detectCycle(ListNode *head);
 
 int main() {
   ListNode* head;
   head = ListNode::Create({3, 2, 0, -4}, 1);
-  assert(hasCycle(head));
+  assert(detectCycle(head)->val == 2);
   head = ListNode::Create({1, 2}, 0);
-  assert(hasCycle(head));
+  assert(detectCycle(head)->val == 1);
   head = ListNode::Create({1});
-  assert(!hasCycle(head));
+  assert(!detectCycle(head));
   return 0;
 }
 
-bool hasCycle(ListNode* head) {
+ListNode *detectCycle(ListNode *head) {
   ListNode* p = head;
   ListNode* q = head;
   while (q && q->next) {
     p = p->next;
     q = q->next->next;
-    if (q && p == q) return true;
+    if (p == q) {
+      p = head;
+      while (p != q) {
+        p = p->next;
+        q = q->next;
+      }
+      return p;
+    }
   }
-  return false;
+  return nullptr;
 }
