@@ -8,8 +8,11 @@
 
 template <typename T>
 void PrintVector(const std::vector<T>& vec, size_t size) {
-  std::copy(vec.begin(), vec.begin() + size, std::ostream_iterator<T>(std::cout, " "));
-  std::cout << '\n';
+  std::copy(
+      vec.begin(), 
+      vec.begin() + size, 
+      std::ostream_iterator<T>(std::cout, " "));
+  std::cout << std::endl;
 }
 
 #endif  // LEETCODE_UTILS_H_
