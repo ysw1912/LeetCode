@@ -1,4 +1,8 @@
-set(SUBDIRS 122)
+set(SUBDIRS
+  122
+  134
+  376
+)
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()
