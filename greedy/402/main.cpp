@@ -49,4 +49,3 @@ string removeKdigits(string num, int k) {
   cout << ans << endl;
   return ans;
 }
-
