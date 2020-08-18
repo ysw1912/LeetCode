@@ -3,8 +3,6 @@
 #include <algorithm>
 #include <vector>
 
-#include "utils.h"
-
 using namespace std;
 
 int eraseOverlapIntervals(vector<vector<int>>& intervals);
