@@ -9,7 +9,7 @@ add_library(utils
     src/data_structure.cpp
 )
 
-set(SUBDIRS 75 77 greedy two_pointers)
+set(SUBDIRS 75 77 dp greedy two_pointers)
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()
