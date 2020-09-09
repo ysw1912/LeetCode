@@ -1,7 +1,4 @@
-#include <string>
 #include <vector>
-
-#include <cassert>
 
 #include "data_structure.h"
 
