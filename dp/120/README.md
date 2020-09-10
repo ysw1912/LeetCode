@@ -18,4 +18,18 @@
 
 -----
 
-#### 正解一 
+#### 正解一 DP O(n^2)
+
+&emsp;&emsp;dp[i][j] 表示从三角形顶部走到位置 (i, j) 的最小路径和。
+
+- 状态转移为 dp[i][j] = min(dp[i − 1][j − 1], dp[i − 1][ j ]) + triangle[i][j]
+- j = 0 时，dp[i][0] = dp[i − 1][0] + triangle[i][0]
+- j = i 时，dp[i][i] = dp[i − 1][i − 1] + triangle[i][i]
+
+&emsp;&emsp;最终的答案即为 dp[n - 1] 的最小值。
+
+#### 正解二 DP O(n)
+
+&emsp;&emsp;可以发现，dp[i][..] 只与 dp[i - 1][..] 有关，因此可以降维至 O(n)。
+
+&emsp;&emsp;且每个内层循环 j 只与 j - 1 有关，因此内层循环需要让 j 从 i 递减至 0 遍历，这样计算 dp[i][j] 时用的 dp[i][j] 和 dp[i][j - 1] 才是没有更新过的值。
