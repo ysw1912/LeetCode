@@ -3,8 +3,6 @@
 
 #include <cassert>
 
-#include "utils.h"
-
 using namespace std;
 
 int maxProduct(vector<int>& nums);
