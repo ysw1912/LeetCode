@@ -1,9 +1,6 @@
-#include <algorithm>
 #include <vector>
 
 #include <cassert>
-
-#include "utils.h"
 
 using namespace std;
 
@@ -26,7 +23,6 @@ class NumMatrix {
         areas_[i][j] += areas_[i - 1][j];
       }
     }
-    cout << areas_ << endl;
   }
 
   int sumRegion(int row1, int col1, int row2, int col2) {
