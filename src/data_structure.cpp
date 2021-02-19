@@ -1,6 +1,8 @@
 #include "data_structure.h"
 
+#include <cassert>
 #include <iostream>
+#include <vector>
 
 ListNode* ListNode::Create(const std::initializer_list<int>& list,
     int tail_connect) {
@@ -27,4 +29,19 @@ void ListNode::Print(ListNode* head) {
     head = head->next;
   }
   std::cout << '\n';
+}
+
+TreeNode* TreeNode::Create(const std::initializer_list<int>& list) {
+  size_t size = list.size();
+  assert((size & (size + 1)) == 0);
+  std::vector<TreeNode*> nodes;
+  nodes.reserve(size);
+  for (int x : list) {
+    nodes.emplace_back(x != -1 ? new TreeNode(x) : nullptr);
+  }
+  for (size_t i = 0; i < size / 2; i++) {
+    nodes[i]->left = nodes[2 * i + 1];
+    nodes[i]->right = nodes[2 * i + 2];
+  }
+  return nodes.empty() ? nullptr : nodes.front();
 }
