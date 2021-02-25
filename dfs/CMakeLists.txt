@@ -1,5 +1,5 @@
 set(SUBDIRS
-  98
+  98 105 109
 )
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
