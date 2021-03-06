@@ -1,0 +1,6 @@
+set(SUBDIRS
+  46
+)
+FOREACH(subdir ${SUBDIRS})
+  ADD_SUBDIRECTORY(${subdir})
+ENDFOREACH()

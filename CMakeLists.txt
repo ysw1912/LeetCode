@@ -9,7 +9,7 @@ add_library(utils
     src/data_structure.cpp
 )
 
-set(SUBDIRS dfs dp greedy two_pointers)
+set(SUBDIRS string_set_union backtrace binary_search dfs dp greedy two_pointers)
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()
