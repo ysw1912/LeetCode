@@ -7,6 +7,7 @@ target_include_directories(sort_lib
 )
 
 set(SUBDIRS
+  MergeSort
   QuickSort
 )
 FOREACH(subdir ${SUBDIRS})

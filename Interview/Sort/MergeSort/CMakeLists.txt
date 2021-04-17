@@ -1,0 +1,9 @@
+project(merge_sort)
+add_executable(merge_sort
+  main.cpp
+  merge_sort.cpp
+)
+target_link_libraries(merge_sort
+  sort_lib
+  utils
+)
