@@ -1,0 +1,9 @@
+project(quick_sort)
+add_executable(quick_sort
+  main.cpp
+  quick_sort.cpp
+)
+target_link_libraries(quick_sort
+  sort_lib
+  utils
+)

@@ -6,10 +6,11 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
 add_library(utils
-    src/data_structure.cpp
+  src/data_structure.cpp
+  src/utils.cpp
 )
 
-set(SUBDIRS string_set_union backtrace binary_search dfs dp greedy two_pointers)
+set(SUBDIRS string_set_union backtrace binary_search dfs dp greedy two_pointers Interview)
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()

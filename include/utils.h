@@ -45,13 +45,9 @@ auto operator<<(std::ostream& os, const Container& container)
   return os;
 }
 
-std::pair<char, char> GetBrackets(std::true_type) {
-  return std::make_pair('{', '}');
-}
+std::pair<char, char> GetBrackets(std::true_type);
 
-std::pair<char, char> GetBrackets(std::false_type) {
-  return std::make_pair('[', ']');
-}
+std::pair<char, char> GetBrackets(std::false_type);
 
 template <typename Elem, typename Container>
 auto OutputElement(std::ostream& os, const Elem& element, const Container&, std::true_type)
