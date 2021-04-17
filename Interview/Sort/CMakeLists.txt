@@ -7,8 +7,11 @@ target_include_directories(sort_lib
 )
 
 set(SUBDIRS
+  BubbleSort
+  InsertionSort
   MergeSort
   QuickSort
+  SelectionSort
 )
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})

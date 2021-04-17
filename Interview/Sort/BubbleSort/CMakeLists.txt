@@ -1,0 +1,9 @@
+project(bubble_sort)
+add_executable(bubble_sort
+  main.cpp
+  bubble_sort.cpp
+)
+target_link_libraries(bubble_sort
+  sort_lib
+  utils
+)

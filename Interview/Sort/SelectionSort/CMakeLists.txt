@@ -1,0 +1,9 @@
+project(selection_sort)
+add_executable(selection_sort
+  main.cpp
+  selection_sort.cpp
+)
+target_link_libraries(selection_sort
+  sort_lib
+  utils
+)
