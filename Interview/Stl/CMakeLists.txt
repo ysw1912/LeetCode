@@ -3,6 +3,7 @@ set(SUBDIRS
   Rand10
   SharedPtr
   String
+  StringSplit
   strStr
 )
 FOREACH(subdir ${SUBDIRS})
