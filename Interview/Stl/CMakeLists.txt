@@ -1,6 +1,9 @@
 set(SUBDIRS
-  Sort
-  Stl
+  Queue
+  Rand10
+  SharedPtr
+  String
+  strStr
 )
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
