@@ -4,6 +4,8 @@
 #include <list>
 #include <vector>
 
+#include "utils.h"
+
 using namespace std;
 
 vector<vector<int>> reconstructQueue(vector<vector<int>>& people);
@@ -21,10 +23,12 @@ vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
        [](const vector<int>& a, const vector<int>& b){
          return a[0] > b[0] || (a[0] == b[0] && a[1] < b[1]);
        });
+  cout << people << endl;
   for (const vector<int>& person : people) {
     auto it = ans.begin();
     advance(it, person[1]);
     ans.insert(it, person);
+    cout << ans << endl;
   }
   return vector<vector<int>>(ans.begin(), ans.end());
 }
