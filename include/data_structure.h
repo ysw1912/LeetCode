@@ -5,7 +5,8 @@
 
 class ListNode {
  public:
-  explicit ListNode(int x) : val(x), next(nullptr) {}
+  ListNode() = default;
+  explicit ListNode(int x) : val(x) {}
 
   // tail_connect 表示链表尾节点的下一个元素位置, 形成环.
   static ListNode* Create(const std::initializer_list<int>& list,
@@ -13,8 +14,8 @@ class ListNode {
   static void Print(ListNode*);
 
  public:
-  int val;
-  ListNode* next;
+  int val = 0;
+  ListNode* next = nullptr;
 };
 
 struct TreeNode {

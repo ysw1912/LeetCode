@@ -10,7 +10,17 @@ add_library(utils
   src/utils.cpp
 )
 
-set(SUBDIRS string_set_union backtrace binary_search dfs dp greedy two_pointers Interview)
+set(SUBDIRS
+  backtrace
+  binary_search
+  dfs
+  dp
+  greedy
+  list
+  string_set_union
+  two_pointers
+  Interview
+)
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()
