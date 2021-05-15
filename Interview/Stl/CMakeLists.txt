@@ -1,4 +1,5 @@
 set(SUBDIRS
+  LRU
   Queue
   Rand10
   SharedPtr

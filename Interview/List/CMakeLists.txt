@@ -1,5 +1,6 @@
 set(SUBDIRS
   25
+  206
 )
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})

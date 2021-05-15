@@ -16,7 +16,6 @@ set(SUBDIRS
   dfs
   dp
   greedy
-  list
   string_set_union
   two_pointers
   Interview
