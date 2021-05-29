@@ -1,8 +1,5 @@
 set(SUBDIRS
-  List
-  Sort
-  Stl
-  String
+  415
 )
 FOREACH(subdir ${SUBDIRS})
   ADD_SUBDIRECTORY(${subdir})
